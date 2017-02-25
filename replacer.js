@@ -16,5 +16,5 @@ for (var key in replacements) {
     continue
   }
   document.getElementById(replacements[key][0]).setAttribute('data-tooltip',replacements[key][2])
- // document.getElementById(replacements[key][0]) = replacements[key][1]
+  document.getElementById(replacements[key][0]).innerHTML = replacements[key][1]
 }
