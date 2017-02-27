@@ -10,12 +10,12 @@
         "replacer.js"
       ],
       "matches": [
-        "*://*/*"
+        "https://mail.google.com/*"
       ],
       "run_at": "document_end",
         "permissions": [
         "tabs", "https://mail.google.com/*"
-      ],
+      ]
     }
   ],
   "description": "This extension will allow you to custom Gmail tabs",
