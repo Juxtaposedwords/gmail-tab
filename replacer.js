@@ -5,16 +5,12 @@ var replacements = {
   "updates" : [':2z', "TBD", "Not currently in use"],
   "forums" :  [':30', '/dev/null', "When you have nowhere else to go"]}
 
-var label_ids = []
-for (var k in replacements){
-  label_ids.push(replacements[k][0])
-}
-
 for (var key in replacements) {
-  if (document.getElementById(replacements[key][0]) == null) {
+  var elm  = document.getElementById(replacements[key][0])
+  if (elm == null) {
     console.log(key + " was not found")
     continue
   }
-  document.getElementById(replacements[key][0]).setAttribute('data-tooltip',replacements[key][2])
-  document.getElementById(replacements[key][0]).innerHTML = replacements[key][1]
+  elm.setAttribute('data-tooltip',replacements[key][2]);
+  elm.innerHTML = replacements[key][1]
 }
