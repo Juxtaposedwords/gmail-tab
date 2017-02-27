@@ -8,7 +8,7 @@ var replacements = {
 for (var key in replacements) {
   var elm  = document.getElementById(replacements[key][0])
   if (elm == null) {
-    console.log("the ele for " + key + " was:"+ ele)
+    console.log("the element for " + key + " was not found")
     continue
   }
   elm.setAttribute('data-tooltip',replacements[key][2]);
