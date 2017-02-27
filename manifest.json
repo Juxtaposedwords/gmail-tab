@@ -4,6 +4,7 @@
     "default_popup": "popup.html",
     "default_title": "gmail tab fix"
   },
+  "options_page": "options.html",
   "content_scripts": [
     {
       "js": [
