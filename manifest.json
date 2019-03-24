@@ -22,7 +22,13 @@
   "manifest_version": 2,
   "name": "Gmail Tabs",
   "permissions": [
+    "storage",
     "activeTab"
   ],
+  "options_ui": {
+    "chrome_style": true,
+    "page": "options.html",
+    "open_in_tab": false
+  },
   "version": "1.0"
 }

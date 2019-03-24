@@ -14,22 +14,28 @@ var replacements = {
 
 var changed = 0;
 var divs = document.getElementsByTagName("div");
+console.log('doing the replacer thing')
 for(var i = 0; changed >= 5 || i < divs.length ; i++){
   
-  if (typeof(divs[i]) == 'undefined'){
-    continue
-  }  
+  if ( divs[i] == null )  { continue }
+  // gives us an cleaner way to access the elements
   var elm  = document.getElementById(divs[i].id)
 
-
+  //skip if we don't have a tool-tip
   if (elm == null || 
       elm.getAttribute('data-tooltip') =='undefined' ||
       ! (elm.getAttribute('data-tooltip') in originals)){
     continue
   }
 
-   var rep = replacements[originals[elm.getAttribute('data-tooltip')]]
-   elm.setAttribute('data-tooltip', rep[1])
-   elm.innerHTML = rep[0]
-   changed++
+  var label = originals[elm.getAttribute('data-tooltip')]
+  console.log('attempting to work on : ' + label)
+  var newLabel = ''
+  var newHoverText = ''
+  chrome.storage.local.get([label+'Text', label+'Mouseover'], function(rep){
+     // eval("elm.setAttribute('data-tooltip',  rep." + label+ "Mouseover )")
+     // eval("elm.innerHTML = rep." + label+ "Text ")
+      console.log('sucessfully wrote replacements: '+ rep)
+  });
+  changed++
 }
